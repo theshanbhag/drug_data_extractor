@@ -1,0 +1,2 @@
+[config]
+uri=<Paste your URI here- Do not add inverted commas>

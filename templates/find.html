@@ -8,14 +8,22 @@
         <style>
             body {
               text-align: center;
-              color: red;
+            }
+            p {
+                text-align: center;
+                color: blue;
             }
         </style>
     </head>
     <body>
-        <h2>{{ Names }}</h2>
+        <h2>Search results! </h2>
+        <p>
+            {% for name in Names %}
+                <p>{{ name }}</p>
+            {% endfor %}
+        </p>
         <form>
 <!--        <input type="submit" value="Close" formaction="https://gsidemo-246315.uc.r.appspot.com/"></form>-->
-    <input type="submit" value="Close" formaction="https://127.0.0.1:5001/"></form>
+    <input type="submit" value="Close" formaction="/"></form>
     </body>
 </html>
