@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Request, request
+from flask import Flask, render_template, request
 import pymongo
 import configparser
 
