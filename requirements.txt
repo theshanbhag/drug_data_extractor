@@ -3,3 +3,4 @@ pymongo[srv]
 pymongo
 dnspython
 configparser
+google-cloud-vision

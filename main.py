@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import pymongo
 import configparser
+from google.cloud import vision
+
 
 parser = configparser.ConfigParser()
 parser.read("config.txt")
@@ -9,6 +11,8 @@ app = Flask(__name__)
 myclient = pymongo.MongoClient(parser.get("config", "uri"), tlsAllowInvalidCertificates=True)
 mydb = myclient["AppEngineTest"]
 mycol = mydb["Employee"]
+client = vision.ImageAnnotatorClient()
+
 
 
 @app.route("/")
@@ -19,10 +23,12 @@ def homepage():
 @app.route("/submit", methods=['GET'])
 def docs():
     args = request.args
-    x = mycol.insert_one({"Name": args["fname"], "Surname": args["lname"], "phone":args["phone"]})
-    if x.acknowledged:
-        return render_template("success.html", Names="Data Interested Successfully")
-    return render_template("success.html", Names="Data Insertion Failed !!!!!!")
+    file_path = args['Bucket path']
+    blob_source = vision.Image(source=vision.ImageSource(image_uri=file_path))
+    results = client.text_detection(image=blob_source)
+    print(results)
+    print(">>>>>>>>>>>>>")
+    return "Done"
 
 
 @app.route("/find", methods=['GET'])

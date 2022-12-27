@@ -1,90 +1,128 @@
+<!--<html>-->
+<!--    <head>-->
+<!--        <title>Sample app</title>-->
+<!--        <h1>Sample app</h1>-->
+<!--        <script src="{{ url_for('static', filename='script.js') }}">-->
+<!--            function getURL() {-->
+<!--               return window.location.href;-->
+<!--            }-->
+<!--        </script>-->
+<!--        <style>-->
+<!--        h1 {-->
+<!--          margin: 0 0 10px 0;-->
+<!--          font-weight: 400;-->
+<!--        }-->
+<!--        body {-->
+<!--          display: flex;-->
+<!--          width: 90%;-->
+<!--          padding: 10px 0;-->
+<!--          border-radius: 5px;-->
+<!--          box-shadow: 1px 1px 8px 0px #666;-->
+<!--          background: #fff;-->
+<!--        }-->
+<!--        </style>-->
+<!--        <base href="/">-->
+
+<!--    </head>-->
+<!--    <body>-->
+
+
+<!--        <form>-->
+
+<!--                    <label for="fname">First name:</label>-->
+<!--                    <input type="text" id="fname" name="fname"><br>-->
+<!--                    <label for="lname">Last name:</label>-->
+<!--                    <input type="text" id="lname" name="lname"><br>-->
+<!--                    <label for="phone">Phone Num:</label>-->
+<!--                    <input type="text" id="phone" name="phone"><br>-->
+<!--                    <input type="submit" value="Insert" formaction='/submit'/><br><br><br><br>-->
+<!--        </form>-->
+<!--        <form>-->
+<!--                    <label for="find">User name:</label><input type="text" id="find" name="find"><br>-->
+<!--                    <input type="submit" value="find" formaction="/find">-->
+
+
+<!--        </form>-->
+<!--    </body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Sample app</title>
-        <h1>Sample app</h1>
-        <script src="{{ url_for('static', filename='script.js') }}">
-            function getURL() {
-               return window.location.href;
-            }
-        </script>
-        <style>
-            input[type=text] {
-              width: 130px;
-              box-sizing: border-box;
-              border: 2px solid #ccc;
-              border-radius: 4px;
-              font-size: 16px;
-              background-color: white;
-              background-image: url('searchicon.png');
-              background-position: 10px 10px;
-              background-repeat: no-repeat;
-              padding: 12px 20px 12px 40px;
-              transition: width 0.4s ease-in-out;
-            }
+  <head>
+    <title>Simple login form</title>
+    <script src="{{ url_for('static', filename='script.js') }}">
+        function getURL() {
+           return window.location.href;
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      }
+      form {
+      border: 5px solid #f1f1f1;
+      }
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      button {
+      background-color: #8ebf42;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grabbing;
+      width: 100%;
+      }
+      h1 {
+      text-align:center;
+      fone-size:18;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: left;
+      margin: 24px 50px 12px;
+      }
+      .container {
+      padding: 16px 0;
+      text-align:left;
+      }
+      span.psw {
+      float: right;
+      padding-top: 0;
+      padding-right: 15px;
+      }
+      /* Change styles for span on extra small screens */
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/action_page.php">
+      <h1>Image Extractor</h1>
+      <div class="formcontainer">
+      <hr/>
+      <div class="container">
+        <label for="gcs_path">First name:</label>
+        <input type="text" id="gcs_path" name="Bucket path"><br>
 
-            input[type=text]:focus {
-              width: 30%;
-            }
-            form {
-              text-align: center;
-              padding: 5px;
-            }
-            h1{
-                background: #ffff99;
-                text-align: center;
-                margin-right: 200px;
-                margin-left: 200px;
-            }
-            body {
-                margin: 200px 200px;
-            }
-            label{
-                font-family: "helvetica", sans-serif;
-            }
-
-            input[type=submit] {
-              width: 15%;
-              background-color: #4CAF50;
-              color: white;
-              padding: 14px 20px;
-              margin: 8px 0;
-              border: none;
-              border-radius: 4px;
-              cursor: pointer;
-            }
-
-            input[type=submit]:hover {
-              background-color: #45a049;
-            }
-
-            div {
-              border-radius: 5px;
-              background-color: #f2f2f2;
-              padding: 20px;
-              text-align: center;
-            }
-        </style>
-        <base href="/">
-
-    </head>
-    <body>
-
-
-        <form>
-
-                    <label for="fname">First name:</label>
-                    <input type="text" id="fname" name="fname"><br>
-                    <label for="lname">Last name:</label>
-                    <input type="text" id="lname" name="lname"><br>
-                    <label for="phone">Phone Num:</label>
-                    <input type="text" id="phone" name="phone"><br>
-                    <input type="submit" value="Insert" formaction='/submit'/><br><br><br><br>
-        </form>
-        <form>
-                    <label for="find">User name:</label><input type="text" id="find" name="find"><br>
-                    <input type="submit" value="find" formaction="/find">
-
-
-        </form>
-    </body>
+      </div>
+      <button type="submit" formaction='/submit'>upload Image</button>
+    </form>
+  </body>
 </html>
