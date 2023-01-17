@@ -4,3 +4,4 @@ pymongo
 dnspython
 configparser
 google-cloud-vision
+google-cloud-storage
