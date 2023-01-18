@@ -1,56 +1,7 @@
-<!--<html>-->
-<!--    <head>-->
-<!--        <title>Sample app</title>-->
-<!--        <h1>Sample app</h1>-->
-<!--        <script src="{{ url_for('static', filename='script.js') }}">-->
-<!--            function getURL() {-->
-<!--               return window.location.href;-->
-<!--            }-->
-<!--        </script>-->
-<!--        <style>-->
-<!--        h1 {-->
-<!--          margin: 0 0 10px 0;-->
-<!--          font-weight: 400;-->
-<!--        }-->
-<!--        body {-->
-<!--          display: flex;-->
-<!--          width: 90%;-->
-<!--          padding: 10px 0;-->
-<!--          border-radius: 5px;-->
-<!--          box-shadow: 1px 1px 8px 0px #666;-->
-<!--          background: #fff;-->
-<!--        }-->
-<!--        </style>-->
-<!--        <base href="/">-->
-
-<!--    </head>-->
-<!--    <body>-->
-
-
-<!--        <form>-->
-
-<!--                    <label for="fname">First name:</label>-->
-<!--                    <input type="text" id="fname" name="fname"><br>-->
-<!--                    <label for="lname">Last name:</label>-->
-<!--                    <input type="text" id="lname" name="lname"><br>-->
-<!--                    <label for="phone">Phone Num:</label>-->
-<!--                    <input type="text" id="phone" name="phone"><br>-->
-<!--                    <input type="submit" value="Insert" formaction='/submit'/><br><br><br><br>-->
-<!--        </form>-->
-<!--        <form>-->
-<!--                    <label for="find">User name:</label><input type="text" id="find" name="find"><br>-->
-<!--                    <input type="submit" value="find" formaction="/find">-->
-
-
-<!--        </form>-->
-<!--    </body>-->
-<!--</html>-->
-
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple login form</title>
+    <title>image extractor</title>
 <!--    <script src="{{ url_for('static', filename='script.js') }}">-->
 <!--        function getURL() {-->
 <!--           return window.location.href;-->
@@ -114,11 +65,12 @@
   </head>
   <body>
     <form action="/action_page.php">
-      <h1>Image Extractor</h1>
+      <h1>Drug Image Extractor</h1>
       <div class="formcontainer">
       <hr/>
       <div class="container">
         <label for="bucket_name">bucket name :</label>
+        <!--suppress BuyFluidPluginNoteInspection -->
         <input type="text" id="bucket_name" name="Bucket name"><br>
         <label for="folder_name">folder name :</label>
         <input type="text" id="folder_name" name="Folder name"><br>
